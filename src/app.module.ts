@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { UsersModule } from './users/users.module';
+import { Users } from './users/user.entity';
 
 
 @Module({
@@ -16,8 +17,7 @@ import { UsersModule } from './users/users.module';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
       logging:false,
-      migrations: [__dirname + "/database/migrations/*{js,.ts}"],
-      entities: [__dirname + "/**/*.entity{js,.ts}"],
+      entities: [Users],
       synchronize: true, // Definido como true apenas para desenvolvimento
     }),
     UsersModule
