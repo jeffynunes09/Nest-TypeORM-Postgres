@@ -17,6 +17,7 @@ import { Users } from './users/user.entity';
       password: process.env.DB_PASSWORD,
       database: process.env.DB_DATABASE,
       logging:false,
+      //ADD ENTIDADE COM O TYPEORM
       entities: [Users],
       synchronize: true, // Definido como true apenas para desenvolvimento
     }),
